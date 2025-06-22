@@ -150,3 +150,19 @@ Allows users to leave feedback on properties they have booked.
 
 
 
+## API Security
+
+Securing backend APIs is critical to ensuring data protection, system integrity, and user trust. The Airbnb Clone project implements multiple layers of security to safeguard sensitive operations and prevent unauthorized access.
+
+### 🔐 Authentication
+All users must authenticate using secure methods (e.g., token-based authentication such as JWT). This ensures that only registered users can access protected routes and resources.
+
+**Why it's important:** Prevents unauthorized access to user accounts, property data, and booking details.
+
+---
+
+### 🛂 Authorization
+Role-based access control (RBAC) is implemented to ensure users can only perform actions permitted by their role (e.g., guests can't delete listings, only property owners can manage their properties).
+
+**Why it's important:** Protects the platform from abuse and enforces data ownership and accountability.
+
