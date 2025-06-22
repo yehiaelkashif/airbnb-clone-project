@@ -32,3 +32,99 @@ The following technologies were used in this project, each serving a specific ro
 - **Redis**: An in-memory data store used for caching and real-time data processing to improve the application’s speed and responsiveness.
 
 - **GitHub Actions**: A CI/CD tool used to automate testing and deployment workflows directly from the GitHub repository.
+
+
+## Database Design
+
+The project’s database is structured around core entities that support user interactions, property listings, and booking workflows. Below are the key entities, their essential fields, and their relationships.
+
+### 🧑 Users
+Represents individuals using the platform, either as property owners or customers.
+
+**Key Fields:**
+- `id` (Primary Key)
+- `name`
+- `email` (Unique)
+- `password_hash`
+- `role` (e.g., owner, customer)
+
+**Relationships:**
+- A user can own multiple properties.
+- A user can make multiple bookings and leave multiple reviews.
+
+---
+
+### 🏠 Properties
+Represents real estate listings available for booking.
+
+**Key Fields:**
+- `id` (Primary Key)
+- `owner_id` (Foreign Key to Users)
+- `title`
+- `description`
+- `location`
+- `price_per_night`
+
+**Relationships:**
+- Each property is owned by one user.
+- A property can have multiple bookings and reviews.
+
+---
+
+### 📅 Bookings
+Tracks reservations made by users for properties.
+
+**Key Fields:**
+- `id` (Primary Key)
+- `user_id` (Foreign Key to Users)
+- `property_id` (Foreign Key to Properties)
+- `check_in_date`
+- `check_out_date`
+- `status` (e.g., confirmed, canceled)
+
+**Relationships:**
+- Each booking is made by a user for a specific property.
+- Each booking can be associated with one payment.
+
+---
+
+### 💳 Payments
+Stores transaction details for completed bookings.
+
+**Key Fields:**
+- `id` (Primary Key)
+- `booking_id` (Foreign Key to Bookings)
+- `amount`
+- `payment_method` (e.g., credit card, PayPal)
+- `payment_status`
+
+**Relationships:**
+- Each payment is linked to one booking.
+
+---
+
+### ⭐ Reviews
+Allows users to leave feedback on properties they have booked.
+
+**Key Fields:**
+- `id` (Primary Key)
+- `user_id` (Foreign Key to Users)
+- `property_id` (Foreign Key to Properties)
+- `rating` (1 to 5)
+- `comment`
+
+**Relationships:**
+- A user can leave multiple reviews.
+- Each review is tied to a specific property.
+
+---
+
+### 🔄 Entity Relationships Summary
+
+- **User ↔ Properties**: One-to-Many (a user can own many properties)
+- **User ↔ Bookings**: One-to-Many (a user can make many bookings)
+- **User ↔ Reviews**: One-to-Many (a user can write many reviews)
+- **Property ↔ Bookings**: One-to-Many (a property can have many bookings)
+- **Property ↔ Reviews**: One-to-Many (a property can have many reviews)
+- **Booking ↔ Payment**: One-to-One (each booking has one payment)
+
