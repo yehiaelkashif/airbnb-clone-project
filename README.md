@@ -34,7 +34,27 @@ The following technologies were used in this project, each serving a specific ro
 - **GitHub Actions**: A CI/CD tool used to automate testing and deployment workflows directly from the GitHub repository.
 
 
-## Database Design
+## Feature Breakdown
+
+The Airbnb Clone project replicates the core functionality of a real-world booking platform, providing a seamless experience for both property owners and travelers. Below are the main features and how each contributes to the overall system.
+
+### 🔐 User Management
+Allows users to register, log in, and manage their profiles securely. The system supports role-based access, distinguishing between property owners and guests.
+
+### 🏘️ Property Management
+Enables property owners to list, update, and delete properties. Each listing includes details such as location, pricing, availability, and photos, providing travelers with the information they need to book confidently.
+
+### 📅 Booking System
+Allows guests to check availability, reserve properties, and manage bookings. The system prevents overlapping bookings and ensures availability is accurately reflected.
+
+
+
+
+
+
+
+
+## Database Design   
 
 The project’s database is structured around core entities that support user interactions, property listings, and booking workflows. Below are the key entities, their essential fields, and their relationships.
 
@@ -127,4 +147,6 @@ Allows users to leave feedback on properties they have booked.
 - **Property ↔ Bookings**: One-to-Many (a property can have many bookings)
 - **Property ↔ Reviews**: One-to-Many (a property can have many reviews)
 - **Booking ↔ Payment**: One-to-One (each booking has one payment)
+
+
 
