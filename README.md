@@ -166,3 +166,15 @@ Role-based access control (RBAC) is implemented to ensure users can only perform
 
 **Why it's important:** Protects the platform from abuse and enforces data ownership and accountability.
 
+## CI/CD Pipeline
+
+Continuous Integration and Continuous Deployment (CI/CD) pipelines automate the process of building, testing, and deploying code. They help streamline the development workflow by reducing manual errors, increasing code quality, and enabling faster delivery of new features and fixes.
+
+### 🚀 Why CI/CD Matters
+- Ensures that code changes are automatically tested and validated before being merged.
+- Speeds up deployment cycles and minimizes downtime during updates.
+- Helps maintain a consistent and reliable deployment process across different environments (e.g., development, staging, production).
+
+### 🛠️ Tools Used
+- **GitHub Actions**: Automates tasks such as running tests, linting code, and deploying the application when changes are pushed to the repository.
+- **Docker**: Packages the application and its dependencies into containers to ensure consistent environments across all stages of the pipeline.
